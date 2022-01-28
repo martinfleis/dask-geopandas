@@ -64,3 +64,8 @@ def test_morton_distance_lines(geoseries_lines):
 
 def test_morton_distance_polygons(geoseries_polygons):
     morton_distance_dask(geoseries_polygons)
+
+
+def test_naturalearth():
+    df = geopandas.read_file(geopandas.datasets.get_path("naturalearth_lowres"))
+    morton_distance_dask(df)
